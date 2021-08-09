@@ -1,10 +1,12 @@
 import os
 import sys
 
+BFX_API_KEY = os.environ['BFX_MM_FEE_KEY_1']
+BFX_API_SECRET = os.environ['BFX_MM_FEE_SECRET_1']
+
 MONGO_CLIENT = os.environ['MONGODB_CLIENT']
 MONGO_DB = os.environ['BFX_FEE_DB']
 
-# STATIC - DON'T CHANGE UNLESS YOU KNOW WHAT YOU ARE DOING
 if len(sys.argv) > 1 and sys.argv[1] == 'localhost':
     REDIS_HOST = 'localhost'
 else:
