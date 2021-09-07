@@ -5,5 +5,5 @@ class RedisKey:
     RESTING_ORDERS = 'resting-orders'
     SYMBOLS_EXCLUDED = 'symbols-excluded'
     SYMBOLS_INCLUDED = 'symbols-included'
-    SYMBOLS_SUBBED = 'symbols-subbed'
-    SYMBOLS_TO_SUB = 'symbols-to-sub'
+    SYMBOLS_SUBBED_BFX = 'bfx-symbols-subbed'
+    SYMBOLS_TO_SUB_BFX = 'bfx-symbols-to-sub'
