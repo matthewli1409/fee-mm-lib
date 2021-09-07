@@ -1,5 +1,4 @@
 class RedisKey:
-    """Redis keys"""
     EXCHANGE_WALLET = 'exchange-wallet'
     MARGIN_WALLET = 'margin-wallet'
     ORDERBOOK_UPDATES = 'orderbook-updates'
@@ -7,4 +6,4 @@ class RedisKey:
     SYMBOLS_EXCLUDED = 'symbols-excluded'
     SYMBOLS_INCLUDED = 'symbols-included'
     SYMBOLS_SUBBED = 'symbols-subbed'
-    SYMBOLS_WALLET = 'symbols-wallet'
+    SYMBOLS_TO_SUB = 'symbols-to-sub'
