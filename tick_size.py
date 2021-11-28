@@ -8,10 +8,10 @@ def get_tick_size(price: float) -> float:
         - Example3: LTC ps at 44.0 min tick_size will be 0.001
 
     Args:
-        price -- i.e. 9000
+        price: Price determines tick size
 
     Returns:
-        float: tick_size for inst
+        Tick_size for symbol
     """
     sf = 5
 
