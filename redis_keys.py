@@ -3,6 +3,7 @@ class RedisKey:
     MARGIN_WALLET = 'margin-wallet'
     ORDERBOOK_UPDATES = 'orderbook-updates'
     RESTING_ORDERS = 'resting-orders'
+    STALKER_ORDERS = 'stalker-orders'
     SYMBOLS_EXCLUDED = 'symbols-excluded'
     SYMBOLS_INCLUDED = 'symbols-included'
     SYMBOLS_SUBBED_BFX = 'bfx-symbols-subbed'
