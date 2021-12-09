@@ -5,6 +5,7 @@ class RedisKey:
     ORDERBOOK_UPDATES = 'orderbook-updates'
     RESTING_ORDERS = 'resting-orders'
     STALKER_SYMBOLS = 'stalker-symbols'
+    STALKER_SYMBOLS_SUBBED = 'stalker-symbols-subbed'
     STALKER_ORDERS = 'stalker-orders'
     SYMBOLS_EXCLUDED = 'symbols-excluded'
     SYMBOLS_INCLUDED = 'symbols-included'
