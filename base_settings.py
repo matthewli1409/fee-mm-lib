@@ -8,6 +8,7 @@ class BaseSettings:
 
     if len(sys.argv) > 1 and sys.argv[1] == 'localhost':
         REDIS_HOST = 'localhost'
+        print('HERE! *** ')
     REDIS_HOST = 'redis-cluster-ip-service'
 
     REDIS_PORT = 6379
