@@ -11,4 +11,4 @@ REDIS_PORT = 6379
 if len(sys.argv) > 1 and sys.argv[1] == 'localhost':
     REDIS_HOST = 'localhost'
 else:
-    REDIS_HOST = 'redis-cluster-ip-service'
+    REDIS_HOST = 'redis-svc'
