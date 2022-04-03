@@ -1,5 +1,6 @@
 import os
 
+import sys
 
 class BaseSettings:
     MONGO_CLIENT = os.environ.get('MONGODB_CLIENT')
