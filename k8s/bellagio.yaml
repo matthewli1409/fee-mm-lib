@@ -18,9 +18,6 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 7000
-          env:
-            - name: FUND_NAME
-              value: "MASTER_FUND"
           envFrom:
             - secretRef:
                 name: credentials
