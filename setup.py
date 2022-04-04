@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='fee-lib',
-      version='1.1.2',
+      version='1.1.4',
       description='external api lib',
       url='',
       author='Matthew Li',
