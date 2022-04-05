@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orderbook
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: orderbook
+  template:
+    metadata:
+      labels:
+        component: orderbook
+    spec:
+      containers:
+        - name: orderbook
+          image: matthewli1409/bfx-orderbook
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 7001
+          env:
+            - name: WS_ID
+              value: "0"
+          envFrom:
+            - secretRef:
+                name: credentials
+            - configMapRef:
+                name: env-config
+      imagePullSecrets:
+        - name: docker-credentials
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: orderbook
+spec:
+  type: ClusterIP
+  selector:
+    component: orderbook
+  ports:
+    - port: 7001
+      targetPort: 7001

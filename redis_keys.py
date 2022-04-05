@@ -7,6 +7,7 @@ class RedisKey:
     STALKER_SYMBOLS = 'stalker-symbols'
     STALKER_SYMBOLS_SUBBED = 'stalker-symbols-subbed'
     STALKER_ORDERS = 'stalker-orders'
+    STALKER_TRADING_ON = 'stalker-trading-on'
     SYMBOLS_EXCLUDED = 'symbols-excluded'
     SYMBOLS_INCLUDED = 'symbols-included'
     SYMBOLS_SUBBED_BFX = 'bfx-symbols-subbed'
