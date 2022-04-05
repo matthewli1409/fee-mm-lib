@@ -18,6 +18,9 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 7000
+          env:
+            - name: FUND_NAME
+              value: "BFX_FEE"
           envFrom:
             - secretRef:
                 name: credentials
