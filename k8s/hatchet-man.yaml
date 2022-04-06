@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hatchet-man
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: hatchet-man
+  template:
+    metadata:
+      labels:
+        component: hatchet-man
+    spec:
+      containers:
+        - name: hatchet-man
+          image: matthewli1409/bfx-hatchet-man
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 7002
+          env:
+            - name: FUND_NAME
+              value: "BFX_FEE"
+          envFrom:
+            - secretRef:
+                name: credentials
+            - configMapRef:
+                name: env-config
+      imagePullSecrets:
+        - name: docker-credentials
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hatchet-man
+spec:
+  type: ClusterIP
+  selector:
+    component: hatchet-man
+  ports:
+    - port: 7002
+      targetPort: 7002
