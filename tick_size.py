@@ -16,7 +16,7 @@ def get_tick_size(price: float) -> float:
     sf = 5
 
     # Find length of left side of decimal place. Subtract from s.f. to get multiplier
-    px_s = str(price).split('.')
+    px_s = str(format(price, 'f')).split('.')
     if px_s[0] == '0':
         zeros = len(px_s[1]) - len(px_s[1].lstrip('0'))
         s = '0.' + str(0) * zeros + str(0) * 4 + '1'
