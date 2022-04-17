@@ -24,8 +24,6 @@ spec:
           envFrom:
             - secretRef:
                 name: credentials
-            - configMapRef:
-                name: env-config
       imagePullSecrets:
         - name: docker-credentials
 ---
