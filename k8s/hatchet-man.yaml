@@ -25,7 +25,7 @@ spec:
             - secretRef:
                 name: credentials
       imagePullSecrets:
-        - name: docker-credentials
+        - name: dockersecret
 ---
 apiVersion: v1
 kind: Service
