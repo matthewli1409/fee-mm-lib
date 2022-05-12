@@ -4,6 +4,7 @@ class RedisKey:
     MARGIN_WALLET = 'margin-wallet'
     ORDERBOOK_UPDATES = 'orderbook-updates'
     RESTING_ORDERS = 'resting-orders'
+    STALE_PERP_MARK_PRICES = 'stale-perp-mark-prices'
     STALKER_SYMBOLS = 'stalker-symbols'
     STALKER_SYMBOLS_SUBBED = 'stalker-symbols-subbed'
     STALKER_ORDERS = 'stalker-orders'
