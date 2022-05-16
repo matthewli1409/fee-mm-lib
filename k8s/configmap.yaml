@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mm-configmap
+data:
+  perp-spread-config.json: |
+    {
+      "perp_spread_limit": 0.06,
+      "perp_spread_symbols_ignore": [
+        "tTESTBTCF0:TESTUSDTF0",
+        "tLUNAF0:USTF0",
+        "tLUNAF0:BTCF0"
+      ]
+    }

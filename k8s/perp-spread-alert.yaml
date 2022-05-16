@@ -21,6 +21,8 @@ spec:
           envFrom:
             - secretRef:
                 name: credentials
+            - configMapRef:
+                name: mm-configmap
       imagePullSecrets:
         - name: dockersecret
 ---
