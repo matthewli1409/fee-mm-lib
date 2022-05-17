@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: mm-configmap
 data:
-  perp-spread-config.json: |
+  bfx_alerts_config.json: |
     {
       "perp_spread_limit": 0.06,
       "perp_spread_symbols_ignore": [
