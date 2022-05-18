@@ -5,10 +5,21 @@ from typing import Union
 from dotenv import load_dotenv
 from slack import WebClient
 
-
 load_dotenv()
 
 sc = WebClient(os.getenv(f'SLACK_KEY'))
+
+
+class SlackIcons:
+    BEAR = 'https://i.imgur.com/PMgfJSm.jpg'
+    BULL = 'https://i.imgur.com/XBPqXUp.png'
+    CAT = 'https://i.imgur.com/mIcObyL.jpeg'
+    CHICKEN = 'https://i.imgur.com/3E7nnfl.jpg'
+    COW = 'https://i.imgur.com/bl3C3TC.png'
+    DOG = 'https://i.imgur.com/D38t9ai.jpg'
+    ERROR = 'https://i.imgur.com/zhqaxLY.png'
+    RADIATION = 'https://i.imgur.com/XZSIfbA.png'
+    TAP = 'https://i.imgur.com/GhAQZDQ.png'
 
 
 def send_generic_msg(messages: Union[list, str], title: str, icon_url: str, channel: Union[str, None] = None,
@@ -75,6 +86,7 @@ def merge(messages, n=2000):
     merged_messages.append(merged_message)
     return merged_messages
 
+
 def send_private_message(user_id, username, messages, as_user=False, markdown=False, icon_url=SlackIcons.BULL,
                          attachment_path=None, attachment_type=None, attachment_name=None):
     conversation = sc.conversations_open(users=[user_id])
@@ -101,15 +113,3 @@ def send_private_message(user_id, username, messages, as_user=False, markdown=Fa
         if attachment_path:
             sc.files_upload(channels=channel_id, file=attachment_path, filetype=attachment_type,
                             filename=attachment_name)
-
-
-class SlackIcons:
-    BEAR = 'https://i.imgur.com/PMgfJSm.jpg'
-    BULL = 'https://i.imgur.com/XBPqXUp.png'
-    CAT = 'https://i.imgur.com/mIcObyL.jpeg'
-    CHICKEN = 'https://i.imgur.com/3E7nnfl.jpg'
-    COW = 'https://i.imgur.com/bl3C3TC.png'
-    DOG = 'https://i.imgur.com/D38t9ai.jpg'
-    ERROR = 'https://i.imgur.com/zhqaxLY.png'
-    RADIATION = 'https://i.imgur.com/XZSIfbA.png'
-    TAP = 'https://i.imgur.com/GhAQZDQ.png'
