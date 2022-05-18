@@ -13,17 +13,16 @@ spec:
         component: neuron
     spec:
       containers:
-        - name: bellagio
+        - name: neuron
           image: matthewli1409/khan-neuron
           imagePullPolicy: Always
           ports:
             - containerPort: 7004
-          env:
-            - name: FUND_NAME
-              value: "BFX_FEE"
           envFrom:
             - secretRef:
                 name: credentials
+            - configMapRef:
+                name: mm-configmap
       imagePullSecrets:
         - name: dockersecret
 ---
