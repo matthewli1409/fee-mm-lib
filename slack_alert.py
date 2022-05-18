@@ -75,6 +75,33 @@ def merge(messages, n=2000):
     merged_messages.append(merged_message)
     return merged_messages
 
+def send_private_message(user_id, username, messages, as_user=False, markdown=False, icon_url=SlackIcons.BULL,
+                         attachment_path=None, attachment_type=None, attachment_name=None):
+    conversation = sc.conversations_open(users=[user_id])
+    channel_id = conversation['channel']['id']
+
+    merged_messages = merge(messages, 2000)
+
+    for message in merged_messages:
+        sc.chat_postMessage(
+            channel=channel_id,
+            username=username,
+            parse="full",
+            icon_url=icon_url,
+            text=message if not markdown else None,
+            blocks=[{
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": message
+                }
+            }] if markdown else None,
+            as_user=as_user
+        )
+        if attachment_path:
+            sc.files_upload(channels=channel_id, file=attachment_path, filetype=attachment_type,
+                            filename=attachment_name)
+
 
 class SlackIcons:
     BEAR = 'https://i.imgur.com/PMgfJSm.jpg'
