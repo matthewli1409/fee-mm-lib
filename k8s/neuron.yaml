@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: neuron
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: neuron
+  template:
+    metadata:
+      labels:
+        component: neuron
+    spec:
+      containers:
+        - name: bellagio
+          image: matthewli1409/khan-neuron
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 7004
+          env:
+            - name: FUND_NAME
+              value: "BFX_FEE"
+          envFrom:
+            - secretRef:
+                name: credentials
+      imagePullSecrets:
+        - name: dockersecret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: neuron
+spec:
+  type: ClusterIP
+  selector:
+    component: neuron
+  ports:
+    - port: 7004
+      targetPort: 7004

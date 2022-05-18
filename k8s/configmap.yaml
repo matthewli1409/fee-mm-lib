@@ -13,3 +13,9 @@ data:
         "tLUNAF0:BTCF0"
       ]
     }
+  neuron_config.json: |
+    {
+      "slack_ids": [
+        "UF7MD9XDJ"
+      ]
+    }
