@@ -1,9 +1,8 @@
 import os
 import textwrap
-from typing import Union
-
 from dotenv import load_dotenv
 from slack import WebClient
+from typing import Union
 
 load_dotenv()
 
