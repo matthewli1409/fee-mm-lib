@@ -19,6 +19,7 @@ class SlackIcons:
     ERROR = 'https://i.imgur.com/zhqaxLY.png'
     FROG_SMILE = 'https://i.imgur.com/St8whhu.gif'
     FROG_CRY = 'https://i.imgur.com/Acpk9Uv.png'
+    FROG_SKELETON = 'https://i.imgur.com/IhQgU5V.jpeg'
     RADIATION = 'https://i.imgur.com/XZSIfbA.png'
     TAP = 'https://i.imgur.com/GhAQZDQ.png'
 
