@@ -2,6 +2,7 @@ class RedisKey:
     ALGO_STALKER_DATA = 'stalker-data'
     CLONE_ORDERS = 'clone-orders'
     CLONE_TRADING_ON = 'clone-trading-on'
+    CLONE_ORDERS = 'clone-orders'
     EXCHANGE_WALLET = 'exchange-wallet'
     MARGIN_WALLET = 'margin-wallet'
     ORDERBOOK_UPDATES = 'orderbook-updates'
